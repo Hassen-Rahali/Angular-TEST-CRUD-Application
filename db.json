@@ -1,0 +1,16 @@
+{
+  "person": [
+    {
+      "id": 1,
+      "first_name": "hsouna",
+      "last_name": "rahali",
+      "email_address": "hassen@gmail.com"
+    },
+    {
+      "id": 1212,
+      "first_name": "ahmed",
+      "last_name": "mazerty",
+      "email_address": "ahmed@mlo.bom"
+    }
+  ]
+}

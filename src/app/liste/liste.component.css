@@ -1,0 +1,9 @@
+label {
+    display: inline-block;
+    width: 60px; /* adjust as needed */
+    text-align: right;
+    margin-right: 10px;
+  }
+  input[type="text"] {
+    width: 200px; /* adjust as needed */
+  }

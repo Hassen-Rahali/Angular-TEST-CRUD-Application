@@ -1,0 +1,60 @@
+<div class="container">
+  <h1 class="text-primary">ajouter person</h1>
+
+  <div class="row">
+    <!-- left column -->
+
+
+    <!-- edit form column -->
+    <div class="col-md-9">
+
+      <h3>person info</h3>
+
+
+      <div ngForm #form="ngForm">
+        <div class="form-group">
+          <label class="col-lg-3 ">id person:</label>
+
+          <input name="a" class="form-control" type="number" required [(ngModel)]="person.id" #f="ngModel">
+          <div class="alert alert-danger mt-2" *ngIf="f.invalid&&f.touched">
+            <p *ngIf="f.hasError('required')">this field is
+              required</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 ">Nom person:</label>
+          <input class="form-control" type="text"  name="b"
+                 required [(ngModel)]="person.first_name" #t="ngModel"  minlength="3">
+          <div class="alert alert-danger mt-2" *ngIf="t.invalid && t.touched">
+            <p *ngIf="t.hasError('required')">this field is required</p>
+            <p *ngIf="t.hasError('minlength')">minlength is equal to 3</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 ">Prenom person:</label>
+
+          <input class="form-control" type="text" required [(ngModel)]="person.last_name"  name="c" #p="ngModel" minlength="3" >
+          <div  class="alert alert-danger mt-2" *ngIf="p.invalid&&p.touched"><p *ngIf="p.hasError('required')">this field is
+            required</p>
+            <p *ngIf="p.hasError('minlength')">minlength is equal to 3</p></div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 ">Email:</label>
+
+          <input class="form-control" type="email" required  name="d" [(ngModel)]="person.email_address" #q="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+          <div class="alert alert-danger mt-2" *ngIf="q.invalid&&q.touched"><p *ngIf="q.hasError('required')">this field is
+            required</p></div>
+            <div class="invalid-feedback d-block text-left" *ngIf="q.invalid&&q.touched&&q.hasError('pattern')">
+              merci de fournir une adresse email valide.
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+        <button  class="btn m-2 btn-success" [disabled]="form.invalid" (click)="savePerson()">save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
